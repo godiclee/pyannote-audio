@@ -293,7 +293,7 @@ class Audio:
         file: AudioFile,
         segment: Segment,
         duration: Optional[float] = None,
-        mode="raise",
+        mode="pad",
     ) -> Tuple[Tensor, int]:
         """Fast version of self(file).crop(segment, **kwargs)
 

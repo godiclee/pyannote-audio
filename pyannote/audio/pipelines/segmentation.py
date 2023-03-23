@@ -27,11 +27,10 @@ from functools import partial
 from typing import Callable, Optional, Text, Union
 
 import networkx as nx
-print('reach')
 import numpy as np
 from pyannote.core import SlidingWindowFeature
 from pyannote.pipeline.parameter import Uniform
-print('reach')
+
 from pyannote.audio.core.inference import Inference
 from pyannote.audio.core.io import AudioFile
 from pyannote.audio.core.model import Model

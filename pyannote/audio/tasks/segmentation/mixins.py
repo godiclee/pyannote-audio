@@ -351,7 +351,10 @@ class SegmentationTaskMixin:
             targets=collated_y.unsqueeze(1),
         )
 
-        return {"X": augmented.samples, "y": self.adapt_y(augmented.targets.squeeze(1))}
+        try: # if not using augmentation
+            return {"X": augmented.samples, "y": self.adapt_y(augmented.targets.squeeze(1))}
+        except: # if use augmentation
+            return {"X": augmented, "y": collated_y}
 
     def train__len__(self):
         # Number of training samples in one epoch
